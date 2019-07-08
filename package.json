@@ -6,6 +6,7 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel open:src",
     "open:src": "babel-node buildScripts/srcServer.js",
+    "lint": "esw webpack.config.*  src  buildScripts --color",
     "localtunnel": "lt --port 3000 --subdomain momoduoladapo",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
