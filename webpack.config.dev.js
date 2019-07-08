@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from 'path';
 
 export default {
@@ -14,11 +14,11 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-        debug: true,
-        noInfo: false,
-      })
-  ],
+    new HtmlWebpackPlugin({
+    template: "src/index.html",
+    inject: true
+    })
+    ],
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
