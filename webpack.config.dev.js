@@ -1,9 +1,9 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from 'path';
 
 export default {
+  debug: true,
   devtool: 'inline-source-map',
-  mode: 'development',
+  noInfo: false,
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
@@ -13,12 +13,7 @@ export default {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-    template: "src/index.html",
-    inject: true
-    })
-    ],
+  plugins: [],
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
